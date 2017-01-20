@@ -34,7 +34,7 @@ public class ProjetoTest {
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target("http://localhost:8080");
 		
-		String conteudo = target.path("projetoResource").request().get(String.class);
+		String conteudo = target.path("projetoResource/1").request().get(String.class);
 		
 		Projeto projeto = (Projeto) new XStream().fromXML(conteudo);
 		Assert.assertEquals("Minha loja", projeto.getNome());
